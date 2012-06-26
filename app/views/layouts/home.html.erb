@@ -25,18 +25,18 @@
           <% end %>
         <% end %>
       </div>
-      <a href="http//192.168.1.110/admin/index"><%= I18n.t 'layout.side.home' -%></a><br/>
+        <%= link_to I18n.t('layout.side.home'), :controller => "store" -%><br/>
         <a href="products/new"><%= I18n.t 'layout.side.questions' -%></a><br/>
         <a href="products/new"><%= I18n.t 'layout.side.news' -%></a><br/>
         <a href="http://www.../contact"><%= I18n.t 'layout.side.contact' -%></a><br/>
-        <% if session[:user_id] %>
+        <% if current_user.try(:admin?) %>
           <br />
            <%= link_to "Orders", "#" %><br/>
            <%= link_to "Products", :controller => "products" %><br/>
            <%= link_to "Users", :controller => "users" %><br/>
            <br />
-           <%= link_to "Logout", :controller => "admin", :action => 'lonout' %><br/>
         <% end %>
+        <%= link_to "Logout", :controller => "admin", :action => 'lonout' %><br/>
       </div>
       <div id = "main" >
         <% if flash[:notice] -%>
