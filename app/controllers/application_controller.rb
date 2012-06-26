@@ -37,4 +37,8 @@ class ApplicationController < ActionController::Base
         redirect_to :controller => 'admin', :action => 'login'
       end
     end
+
+    def admin_require
+      raise '你没有权限访问此页面。' unless current_user.admin?
+    end
 end
