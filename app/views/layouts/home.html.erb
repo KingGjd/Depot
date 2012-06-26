@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Pragprog Books Online Store
+    </title>
+    <%= stylesheet_link_tag "depot", :media => "all"%>
+    <%= javascript_include_tag :application %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body id = "store">
+    <div id = "banner">
+      <%= form_tag "", :method => "GET", :class => 'locale' do %>
+        <%#=  Product.human_attribute_name(:title) -%>
+        <%= select_tag 'locale', options_for_select(LANGUAGES, I18n.locale), :onchange => 'this.form.submit()' %>
+        <%= javascript_tag "$('.locale input').hide()" %>
+      <% end %>
+      <%= image_tag("logo.png") %>
+      <%= @page_title || I18n.t('layout.title')%>
+    </div>
+    <div id = "columns">
+      <div id = "side" >
+        <div id="cart">
+        <% if @cart%>
+          <%= hidden_div_if(@cart.items.empty?, :id => "cart" ) do %>
+            <%= render( :partial => "cart" , :object => @cart)%>
+          <% end %>
+        <% end %>
+      </div>
+      <a href="http//192.168.1.110/admin/index"><%= I18n.t 'layout.side.home' -%></a><br/>
+        <a href="products/new"><%= I18n.t 'layout.side.questions' -%></a><br/>
+        <a href="products/new"><%= I18n.t 'layout.side.news' -%></a><br/>
+        <a href="http://www.../contact"><%= I18n.t 'layout.side.contact' -%></a><br/>
+        <% if session[:user_id] %>
+          <br />
+           <%= link_to "Orders", "#" %><br/>
+           <%= link_to "Products", :controller => "products" %><br/>
+           <%= link_to "Users", :controller => "users" %><br/>
+           <br />
+           <%= link_to "Logout", :controller => "admin", :action => 'lonout' %><br/>
+        <% end %>
+      </div>
+      <div id = "main" >
+        <% if flash[:notice] -%>
+          <div id = "notice"><%= flash[:notice] %> </div>
+        <% end -%>
+        <%= yield :layout%>
+      </div>
+    </div>
+  </body>
+</html>

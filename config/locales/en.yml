@@ -1,0 +1,29 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  layout:
+    side:
+      home: 'Home'
+      questions: 'Questions'
+      news: 'News'
+      contact: 'Contact'
+    cart:
+      button:
+        empty: "Empty cart"
+        checkout: "Checkout"
+      title: "Your Cart"
+    title: "Pragmaticions Bookshelf"
+  main:
+    button:
+      add: "Add to Cart"
+    title: "Your Pragmatic Catalog"
+  checkout:
+    legend: "Please Enter your Details"
+    name: "Name"
+    address: "Address"
+    email: "E-mail"
+    pay_type: "Pay with"
+    pay_prompt: "Select a payment method"
+    submit: "Place Order"
