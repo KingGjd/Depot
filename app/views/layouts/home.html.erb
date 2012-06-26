@@ -36,7 +36,11 @@
            <%= link_to "Users", :controller => "users" %><br/>
            <br />
         <% end %>
+        <% if current_user %>
         <%= link_to "Logout", :controller => "admin", :action => 'lonout' %><br/>
+        <% else %>
+        <%= link_to "Login", :controller => "admin", :action => 'login' %><br/>
+        <% end %>
       </div>
       <div id = "main" >
         <% if flash[:notice] -%>
