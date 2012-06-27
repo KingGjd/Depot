@@ -13,6 +13,8 @@ Depot1::Application.routes.draw do
   resources :users do
     collection do
       post :add_user
+      get :change_password
+      put :save_change_password
     end
   end
   resources :store do

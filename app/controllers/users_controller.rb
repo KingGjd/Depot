@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :admin_require, :except => [:new]
-  skip_before_filter :authorize, :only => [ :new]
+  before_filter :admin_require, :except => [:change_password, :save_change_password]
+  #skip_before_filter :authorize
 
   # GET /users
   # GET /users.json
@@ -71,13 +71,40 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        flash[:notice] = "User #{@user.name} was successfully updated."
+        flash[:notice] = "user #{@user.name} was successfully updated."
         format.html { redirect_to(:action => 'index') }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
         format.json { render :json => @user.errors, :status => :unprocessable_entity }
       end
+    end
+  end
+
+  def change_password
+    @user = current_user
+
+    respond_to do |format|
+      format.html{}
+    end
+  end
+
+  def save_change_password
+    @user = current_user
+    old_password = params[:user].delete :old_password
+    new_password = params[:user].delete :password
+    password_confirmation = params[:user].delete :password_confirmation
+    if User.authenticate(@user.name, old_password)
+      if @user.update_attributes(:password => new_password,
+                                 :password_confirmation => password_confirmation)
+        flash[:notice] = "User #{@user.name}'s password was changed successfully."
+        redirect_to :controller => 'store'
+      else
+        render :change_password
+      end
+    else
+      @user.errors.add(:old_password, "旧密码错误")
+      render :change_password
     end
   end
 

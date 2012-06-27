@@ -32,16 +32,19 @@
           <% end %>
         <% end %>
       </div>
-        <%= link_to I18n.t('layout.side.home'), :controller => "store" -%><br/>
-        <a href="products/new"><%= I18n.t 'layout.side.questions' -%></a><br/>
-        <a href="products/new"><%= I18n.t 'layout.side.news' -%></a><br/>
-        <a href="http://www.../contact"><%= I18n.t 'layout.side.contact' -%></a><br/>
         <% if current_user.try(:admin?) %>
           <br />
            <%= link_to "Orders", "#" %><br/>
            <%= link_to "Products", :controller => "products" %><br/>
            <%= link_to "Users", :controller => "users" %><br/>
+           <%#= link_to "修改密码", change_password_users_path  %>
            <br />
+         <% else %>
+            <%= link_to I18n.t('layout.side.home'), :controller => "store" -%><br/>
+            <a href="products/new"><%= I18n.t 'layout.side.questions' -%></a><br/>
+            <a href="products/new"><%= I18n.t 'layout.side.news' -%></a><br/>
+            <a href="http://www.../contact"><%= I18n.t 'layout.side.contact' -%></a><br/>
+            <%= link_to "修改密码", change_password_users_path%><br/>
         <% end %>
         <% if current_user %>
         <%= link_to "Logout", :controller => "admin", :action => 'lonout' %><br/>
