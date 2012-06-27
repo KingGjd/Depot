@@ -10,8 +10,11 @@ Depot1::Application.routes.draw do
   get "admin/index"
   resources :admin
     
-  resources :users
-
+  resources :users do
+    collection do
+      post :add_user
+    end
+  end
   resources :store do
     collection do
       post :add_to_cart

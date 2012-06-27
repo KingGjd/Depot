@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :admin_require
+  before_filter :admin_require, :except => [:new]
+  skip_before_filter :authorize, :only => [ :new]
 
   # GET /users
   # GET /users.json
@@ -54,7 +55,15 @@ class UsersController < ApplicationController
       end
     end
   end
+#FIXME
+  def add_user
+       @user = User.new
 
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render :json => @user }
+    end 
+  end
   # PUT /users/1
   # PUT /users/1.json
   def update
