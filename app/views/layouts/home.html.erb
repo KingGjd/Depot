@@ -10,8 +10,15 @@
     <div id = "banner">
       <%= form_tag "", :method => "GET", :class => 'locale' do %>
         <%#=  Product.human_attribute_name(:title) -%>
+        <div class = "welcome">
         <%= select_tag 'locale', options_for_select(LANGUAGES, I18n.locale), :onchange => 'this.form.submit()' %>
         <%= javascript_tag "$('.locale input').hide()" %>
+        <% if session[:user_id]%>
+           <%= current_user.name %>您好
+         <% else %>
+           <%= "游客您好" %>
+         <% end%>
+       </div>
       <% end %>
       <%= image_tag("logo.png") %>
       <%= @page_title || I18n.t('layout.title')%>
