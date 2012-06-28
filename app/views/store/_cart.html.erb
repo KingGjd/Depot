@@ -9,6 +9,10 @@
     <td class = "total-cell" ><%= number_to_currency(cart.total_price)%> </td>
   </tr>
 </table>
-<%= button_to I18n.t('layout.cart.button.checkout'), :action => 'checkout' %>
+  <% if current_user %>
+    <%= button_to I18n.t('layout.cart.button.checkout'), :action => 'checkout' %>
+  <% else %>
+    <%= button_to I18n.t('layout.cart.button.checkout'), admin_login_post %>
+  <% end%>
 <%= button_to I18n.t('layout.cart.button.empty'), :action => :empty_cart%>
 <% end %>
