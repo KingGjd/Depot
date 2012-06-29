@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120615023651) do
+ActiveRecord::Schema.define(:version => 20120629021525) do
 
   create_table "line_items", :force => true do |t|
     t.integer  "product_id"
@@ -34,9 +34,13 @@ ActiveRecord::Schema.define(:version => 20120615023651) do
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
-    t.datetime "created_at",                                                 :null => false
-    t.datetime "updated_at",                                                 :null => false
-    t.decimal  "price",       :precision => 8, :scale => 2, :default => 0.0
+    t.datetime "created_at",                                                         :null => false
+    t.datetime "updated_at",                                                         :null => false
+    t.decimal  "price",               :precision => 8, :scale => 2, :default => 0.0
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "sessions", :force => true do |t|
