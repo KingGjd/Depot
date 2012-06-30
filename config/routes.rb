@@ -24,6 +24,7 @@ Depot1::Application.routes.draw do
       post :save_order
       post :empty_cart
       post :index
+      get :_cart_item
       get :index
     end
   end

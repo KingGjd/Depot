@@ -14,9 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-/*.swp
-/*.swn
-/*.swo
-/*/*.swp
-/*/*.swn
-/*/*.swo
+*.swp
+d.diff
+*.swo
+*.swn

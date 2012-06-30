@@ -250,3 +250,12 @@ background: #efe;
   border: 2px solid red;
   display: inline-block;
 }
+
+.quantity_add{
+  width: 10px;
+  height: 10px;
+}
+.quantity_reduce{
+  width: 13px;
+  height: 13px;
+}

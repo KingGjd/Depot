@@ -12,3 +12,16 @@
     </div>
   </div>
 <% end %>
+<script type="text/javascript" language="javascript" charset="utf-8">
+//<![CDATA[
+$(function() {
+  $(".quantity_add").live('click', function() {
+    $.ajax({
+      url: '/store/add_to_cart.js',
+      type: 'POST',
+      data: { id: $(this).parents('tr').attr('product_id') }
+    });
+  });
+});
+//]]>
+</script>
