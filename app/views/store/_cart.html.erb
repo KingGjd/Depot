@@ -12,7 +12,7 @@
   <% if current_user %>
     <%= button_to I18n.t('layout.cart.button.checkout'), :action => 'checkout' %>
   <% else %>
-    <%= button_to I18n.t('layout.cart.button.checkout'), admin_login_post %>
+    <%= button_to I18n.t('layout.cart.button.checkout'), admin_login_path %>
   <% end%>
 <%= button_to I18n.t('layout.cart.button.empty'), :action => :empty_cart%>
 <% end %>

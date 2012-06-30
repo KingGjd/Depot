@@ -3,12 +3,7 @@
 <% else%>
   <tr>
 <% end%>
-<%- 
 
-  logger.info "================="
-  logger.info cart_item.inspect
-  logger.info cart_item.class
--%>
     <td><%= cart_item.quantity %> &times;</td>
     <td><%= cart_item.title%> </td>
     <td class = "item-price"><%= number_to_currency(cart_item.price) %></td>
