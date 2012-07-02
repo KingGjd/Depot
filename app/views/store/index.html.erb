@@ -23,5 +23,14 @@ $(function() {
     });
   });
 });
+$(function() {
+  $(".quantity_reduce").live('click', function() {
+    $.ajax({
+      url: '/store/reduce_from_cart.js',
+      type: 'POST',
+      data: { id: $(this).parents('tr').attr('product_id') }
+    });
+  });
+});
 //]]>
 </script>

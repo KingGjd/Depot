@@ -20,6 +20,7 @@ Depot1::Application.routes.draw do
   resources :store do
     collection do
       post :add_to_cart
+      post :reduce_from_cart
       post :checkout
       post :save_order
       post :empty_cart

@@ -18,6 +18,20 @@ class StoreController < ApplicationController
     redirect_to_index("Invalid product")
   end
 
+  def reduce_from_cart
+    product = Product.find(params[:id])
+    @cart = find_cart
+    @current_item = @cart.reduce_product(product)
+
+    respond_to do |format|
+      format.js if request.xhr?
+      format.html {redirect_to_index}
+    end
+  rescue ActiveRecord::RecordNotFound
+    logger.error("Attempt to access invalid product #{params[:id]}")
+    redirect_to_index("Invalid product")
+  end
+
   def save_order
     @cart = find_cart
     @order = Order.new params[:order]

@@ -1,10 +1,10 @@
 $("#cart").html("<%= escape_javascript(render(:partial => 'cart', :object => @cart)) %>");
 
-if (<%= @cart.total_items %> == 1) {
-  $("#cart") .hide(); }
-else {
+if (<%= @cart.total_items %> == 0) {
+  $("#cart").hide();
+} else if (<%= @cart.total_items %> == 1) {
   $("#cart").show('blind', {}, 500 );
 }
 
 $("#current_item").effect("highlight", {"color": "#88ff88"}, 300);
-$("div #notice") && $("div #notice").hide();
+$("div #notice").hide();

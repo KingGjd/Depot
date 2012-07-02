@@ -26,9 +26,9 @@
     <div id = "columns">
       <div id = "side" >
         <div id="cart">
-        <% if @cart%>
+        <% if @cart %>
           <%= hidden_div_if(@cart.items.empty?, :id => "cart" ) do %>
-            <%= render( :partial => "cart" , :object => @cart)%>
+            <%= render :partial => "cart", :object => @cart %>
           <% end %>
         <% end %>
       </div>
