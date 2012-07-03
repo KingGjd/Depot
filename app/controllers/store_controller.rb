@@ -1,4 +1,5 @@
 class StoreController < ApplicationController
+  skip_before_filter :authorize
   def index
     @products = Product.find_products_for_sale
     @cart = find_cart
@@ -72,8 +73,5 @@ class StoreController < ApplicationController
       session[:cart] = Cart.new
     end
     session[:cart]
-  end
-  def authorize
-
   end
 end

@@ -7,9 +7,4 @@ class InfoController < ApplicationController
       format.xml {render :layout => false }
     end
   end
-
-protected
-  def authorize
-
-  end
 end

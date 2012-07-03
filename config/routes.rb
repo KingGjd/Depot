@@ -13,8 +13,7 @@ Depot1::Application.routes.draw do
   get "admin/lonout"
 
   get "admin/index"
-  resources :admin
-    
+
   resources :users do
     collection do
       post :add_user

@@ -13,7 +13,7 @@ class AdminController < ApplicationController
            redirect_to(uri ||{:controller => "store"})
         end
       else
-        flash.now[:notice] = "Invalid user/password combination"
+          flash.now[:notice] = "Invalid user/password combination"
       end
     end
   end

@@ -1,7 +1,5 @@
 class Admin::UsersController < ApplicationController
-  before_filter :admin_require, :except => [:change_password, :save_change_password, :add_user]
-  skip_before_filter :authorize, :only => [:add_user]
-
+  before_filter :admin_require, :except => [:change_password, :save_change_password]
   # GET /users
   # GET /users.json
   def index
