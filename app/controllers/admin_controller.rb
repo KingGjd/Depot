@@ -8,7 +8,7 @@ class AdminController < ApplicationController
         uri = session[:original_uri]
         session[:original_uri] = nil
         if current_user.admin?
-           redirect_to(uri ||{:controller => "products"})
+           redirect_to(uri ||admin_products_path)
         else
            redirect_to(uri ||{:controller => "store"})
         end

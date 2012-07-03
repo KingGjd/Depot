@@ -1,4 +1,9 @@
 Depot1::Application.routes.draw do
+  namespace :admin do
+    resources :users
+    resources :products
+  end
+
   get "info/who_bought"
 
   get "admin/login"
@@ -13,6 +18,7 @@ Depot1::Application.routes.draw do
   resources :users do
     collection do
       post :add_user
+      get :add_user
       get :change_password
       put :save_change_password
     end
@@ -29,9 +35,7 @@ Depot1::Application.routes.draw do
       get :index
     end
   end
-
-  resources :products
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
