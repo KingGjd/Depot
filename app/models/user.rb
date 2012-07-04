@@ -8,10 +8,6 @@ class User < ActiveRecord::Base
 
   validate :password_non_blank
 
-  def admin?
-    self.name == 'admin'
-  end
-
   def password
     @password
   end
