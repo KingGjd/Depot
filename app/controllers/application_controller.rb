@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
     def authorize
       unless User.find_by_id(session[:user_id])
         flash[:notice] = "Please log in"
-        redirect_to :controller => 'admin', :action => 'login'
+        redirect_to admin_login_path
       end
     end
 

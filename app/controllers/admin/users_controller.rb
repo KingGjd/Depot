@@ -45,10 +45,10 @@ class Admin::UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         flash[:notice] = "User #{@user.name} was successfully created."
-        format.html { redirect_to(:action => 'index') }
+        format.html { redirect_to(admin_users_path) }
         format.json { render :json => @user, :status => :created, :location => @user }
       else
-        format.html { render :action => "new" }
+        format.html { render new_admin_user_path }
         format.json { render :json => @user.errors, :status => :unprocessable_entity }
       end
     end
@@ -109,7 +109,7 @@ class Admin::UsersController < ApplicationController
       flash[:notice] = e.message
     end
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_to admin_users_url }
       format.json { head :no_content }
     end
   end
