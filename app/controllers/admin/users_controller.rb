@@ -3,7 +3,8 @@ class Admin::UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.find(:all, :order =>:name)
+  #  @users = User.find(:all, :order =>:name)
+    @users = User.paginate :page => params[:page], :per_page => 10
 
     respond_to do |format|
       format.html # index.html.erb
