@@ -112,6 +112,7 @@ GEM
       multi_json (>= 1.0.2)
     uuid (2.3.5)
       macaddr (~> 1.0)
+    will_paginate (3.0.3)
 
 PLATFORMS
   ruby
@@ -128,3 +129,4 @@ DEPENDENCIES
   therubyracer
   uglifier (>= 1.0.3)
   uuid
+  will_paginate (~> 3.0)

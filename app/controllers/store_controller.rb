@@ -1,7 +1,9 @@
 class StoreController < ApplicationController
   skip_before_filter :authorize
   def index
-    @products = Product.find_products_for_sale
+    #@products = Product.find_products_for_sale
+
+    @products = Product.paginate :page => params[:page], :per_page => 5
     @cart = find_cart
   end
 

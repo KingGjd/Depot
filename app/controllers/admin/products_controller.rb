@@ -4,7 +4,8 @@ class Admin::ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    #@products = Product.all
+    @products = Product.paginate :page => params[:page], :per_page => 5
 
     respond_to do |format|
       format.html # index.html.erb
@@ -46,8 +47,8 @@ class Admin::ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save!
-        format.html { redirect_to @product, :notice => 'Product was successfully created.' }
-        format.json { render :json => @product, :status => :created, :location => @product }
+        format.html { redirect_to admin_product_path(@product), :notice => 'Product was successfully created.' }
+        format.json { render :json => @product, :status => :created, :location =>[:admin, @product] }
       else
         format.html { render :action => "new" }
         format.json { render :json => @product.errors, :status => :unprocessable_entity }
