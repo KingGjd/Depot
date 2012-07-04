@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         flash[:notice] = "User #{@user.name} was successfully created."
-        format.html { redirect_to store_index_path }
+        format.html { redirect_to admin_login_path }
         format.json { render :json => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }

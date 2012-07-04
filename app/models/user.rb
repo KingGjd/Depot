@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :hashed_password, :name, :salt, :password_confirmation, :password
+  attr_accessible :hashed_password, :name, :salt, :password_confirmation, :password, :admin
 
   validates_presence_of :name
   validates_uniqueness_of :name
