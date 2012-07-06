@@ -3,18 +3,18 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>&nbsp;&nbsp;&nbsp;Admin</th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
     <td><%= user.name %></td>
+    <td>&nbsp;&nbsp;&nbsp;<%= user.admin? %>  </td>
     <td>&nbsp; &nbsp;&nbsp;<%= link_to 'Show', admin_user_path(user) %></td>
     <td>&nbsp;<%= link_to 'Edit', edit_admin_user_path(user) %></td>
     <td>&nbsp;<%= link_to 'Destroy', admin_user_path(user), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
-  <tr>
-    <td colspan = 4> <hr></td>
-  </tr>
+
 <% end %>
 </table>
 <%= will_paginate @users, :previous_label => '上一页', :next_label => '下一页' %>
