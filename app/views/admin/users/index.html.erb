@@ -1,5 +1,5 @@
 <h1>Listing users</h1>
-
+<div id = "product-list">
 <table>
   <tr>
     <th>Name</th>
@@ -7,7 +7,7 @@
   </tr>
 
 <% @users.each do |user| %>
-  <tr>
+  <tr class = "<%= cycle('list-line-odd' , 'list-line-even') %>">
     <td><%= user.name %></td>
     <td>&nbsp;&nbsp;&nbsp;<%= user.admin? %>  </td>
     <td>&nbsp; &nbsp;&nbsp;<%= link_to 'Show', admin_user_path(user) %></td>
@@ -17,6 +17,7 @@
 
 <% end %>
 </table>
+</div>
 <%= will_paginate @users, :previous_label => '上一页', :next_label => '下一页' %>
 <br />
 
