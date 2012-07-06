@@ -259,3 +259,8 @@ background: #efe;
   width: 13px;
   height: 13px;
 }
+.product-price{
+  font-weight: bold;
+  font-size: 12px;
+}
+

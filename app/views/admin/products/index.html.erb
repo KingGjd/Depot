@@ -3,15 +3,15 @@
    <table>
    <% @products.each do |product| %>
      <tr class = "<%= cycle('list-line-odd' , 'list-line-even') %>">
-       <td><%= image_tag  product.image_url, :class => 'list-image' %></td>
+       <td><%=link_to image_tag(product.image_url, :class => 'list-image'), admin_product_path(product) %></td>
        <td class = "list-description">
          <dl>
-           <dt> <%= product.title %></dt>
-           <dd><%= truncate( product.description.gsub(/<.*?>/,''), :length=>80) %></dd>
+           <dt> <%= link_to  product.title, admin_product_path(product) %></dt>
+           <dd><%= truncate( product.description.gsub(/<.*?>/,''), :length=>80) %></dd><br/>
+           <dd class ="product-price"><%=number_to_currency(product.price) %> </dd>
          </dl>
        </td>
       <td></td>
-      <td><%= link_to 'Show', admin_product_path(product) %></td>
       <td><%= link_to 'Edit', edit_admin_product_path(product) %></td>
       <td><%= link_to 'Destroy', admin_product_path(product), :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
