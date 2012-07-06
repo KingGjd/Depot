@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
   attr_accessible :description, :image_url, :title, :price, :file, :avatar
-  has_many :orders, :through => :lint_items
+  has_many :orders, :through => :line_items
   has_many :line_items
 
   validates_presence_of :title , :description, :image_url

@@ -1,8 +1,27 @@
+<%- if @product.present? -%>
 <h3>People Who Bought <%= @product.title %></h3>
-<ul>
-  <% for order in @oredrs -%>
-    <li>
-      <%= mail_to order.email , oredr.name %>
-    </li>
-  <% end-%>
-</ul>
+<%- end -%>
+<table>
+  <tr>
+    <td>E-mail</td>
+    <td>Name</td>
+    <td>Address</td>
+    <td>Title</td>
+  </tr>
+  <% @orders.each do |order| -%>
+    <tr>
+    <td>
+      <%= mail_to order.email %>
+    </td>
+    <td>
+      <%= order.name %>
+    </td>
+    <td>
+      <%= order.address %>
+    </td>
+    <td>
+      <%= order.products.map(&:title).join(',') -%>
+    </td>
+    </tr>
+  <% end -%>
+</table>
