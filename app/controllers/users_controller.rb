@@ -19,7 +19,10 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(params[:user])
+    name = params[:user].delete :name
+    password =params[:user].delete :password
+    confirm =params[:user].delete :confirm
+    @user = User.new(:name => name, :password =>password, :password_confirmation => confirm )
     respond_to do |format|
       if @user.save
         flash[:notice] = "User #{@user.name} was successfully created."
