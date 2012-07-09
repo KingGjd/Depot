@@ -46,12 +46,12 @@ class Admin::ProductsController < ApplicationController
     @product = Product.new(params[:product])
 
     respond_to do |format|
-      if @product.save!
+      if @product.save
         format.html { redirect_to admin_product_path(@product), :notice => 'Product was successfully created.' }
-        format.json { render :json => @product, :status => :created, :location =>[:admin, @product] }
+        format.json { render :json => [:admin,@product], :status => :created, :location =>[:admin, @product] }
       else
-        format.html { render :action => "new" }
-        format.json { render :json => @product.errors, :status => :unprocessable_entity }
+        format.html { render new_admin_product_path }
+        format.json { render :json => [:admin,@product.errors], :status => :unprocessable_entity }
       end
     end
   end

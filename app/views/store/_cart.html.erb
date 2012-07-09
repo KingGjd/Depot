@@ -10,9 +10,9 @@
   </tr>
 </table>
   <% if current_user %>
-    <%= button_to I18n.t('layout.cart.button.checkout'), :action => 'checkout' %>
+    <%= button_to I18n.t('layout.cart.button.checkout'), {:action => 'checkout'}, {:style => "cursor:pointer"} %>
   <% else %>
-    <%= button_to I18n.t('layout.cart.button.checkout'), admin_login_path %>
+    <%= button_to I18n.t('layout.cart.button.checkout'), admin_login_path, :style => "cursor:pointer" %>
   <% end%>
-<%= button_to I18n.t('layout.cart.button.empty'), :action => :empty_cart%>
+  <%= button_to I18n.t('layout.cart.button.empty'), {:action => :empty_cart}, {:style => "cursor:pointer"}%>
 <% end %>
