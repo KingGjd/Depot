@@ -79,6 +79,12 @@ zh-CN:
       new_user: "添加用户"
       back: "返回"
       editing_user: "修改用户"
+  models:
+    product:
+      image: "只能上传 GIF,JPG 或PNG 格式的图片"
+      price: "输入的价格不能少于0.01"
+    users:
+      password: "密码不能为空"
   date:
     abbr_day_names:
     - 日

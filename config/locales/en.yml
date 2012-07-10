@@ -83,3 +83,9 @@ en:
       new_user: 'New User'
       back: 'Back'
       editing_user: 'Editing User'
+  models:
+    product:
+      image: 'must be a URL for GIF,JPG or PNG image.'
+      price: 'should be at least 0.01'
+    users:
+      password: 'Missing password'
