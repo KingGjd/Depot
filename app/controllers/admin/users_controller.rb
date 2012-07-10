@@ -72,32 +72,6 @@ class Admin::UsersController < ApplicationController
     end
   end
 
-  def change_password
-    @user = current_user
-
-    respond_to do |format|
-      format.html{}
-    end
-  end
-
-  def save_change_password
-    @user = current_user
-    old_password = params[:user].delete :old_password
-    new_password = params[:user].delete :password
-    password_confirmation = params[:user].delete :password_confirmation
-    if User.authenticate(@user.name, old_password)
-      if @user.update_attributes(:password => new_password,
-                                 :password_confirmation => password_confirmation)
-        flash[:notice] = "User #{@user.name}'s password was changed successfully."
-        redirect_to :controller => 'store'
-      else
-        render :change_password
-      end
-    else
-      @user.errors.add(:old_password, "旧密码错误")
-      render :change_password
-    end
-  end
 
   # DELETE /users/1
   # DELETE /users/1.json
