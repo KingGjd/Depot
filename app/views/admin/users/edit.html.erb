@@ -2,5 +2,5 @@
 
 <%= render :partial => "form" %>
 
-<%= link_to 'show', [:admin, @user] %> |
-<%= link_to 'back', admin_users_path %>
+<%= link_to I18n.t('admin.users.show'), [:admin, @user] %> |
+<%= link_to I18n.t('admin.users.back'), admin_users_path %>
