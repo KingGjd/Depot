@@ -50,3 +50,21 @@ en:
     title: 'Title'
     show: 'Show'
     back: 'Back'
+  admin:
+    login:
+      pleaselogin: 'Please Log In'
+      name: 'Name'
+      password: 'Password'
+      submit: 'Login'
+    product:
+      show: 'Show'
+      back: 'Back'
+      edit: 'Edit'
+      destroy: 'Destroy'
+      pre: 'Previous'
+      next: 'Next'
+      newproduct: 'New Product'
+      title: 'Titel'
+      description: 'Description'
+      image_url: 'Image Url'
+      price: 'Price'

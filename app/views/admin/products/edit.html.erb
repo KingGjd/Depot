@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', [:admin, @product] %> |
-<%= link_to 'Back',admin_products_path %>
+<%= link_to I18n.t('admin.product.show'), [:admin, @product] %> |
+<%= link_to I18n.t('admin.product.back'), admin_products_path %>

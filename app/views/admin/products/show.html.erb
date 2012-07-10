@@ -1,23 +1,23 @@
 
 
 <p>
-  <b>Title:</b>
+  <b><%= I18n.t('admin.product.title') %>:</b>
   <%= @product.title %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b><%= I18n.t('admin.product.description') %>:</b>
   <%=  @product.description %>
 </p>
 
 <p>
-  <b>Image url:</b>
+  <b><%= I18n.t('admin.product.image_url') %>:</b>
   <%= image_tag @product.image_url %><br />
 </p>
 <%#= image_tag @product.avatar.try(:url) %>
 <p>
-  <b>Price </b>
+  <b><%= I18n.t('admin.product.price') %>: </b>
   <%= @product.price %>
 </p>
-<%= link_to 'Edit', edit_admin_product_path(@product) %> |
-<%= link_to 'Back', admin_products_path %>
+<%= link_to I18n.t('admin.product.edit') , edit_admin_product_path(@product) %> |
+<%= link_to I18n.t('admin.product.back'), admin_products_path %>

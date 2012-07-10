@@ -12,14 +12,14 @@
          </dl>
        </td>
       <td></td>
-      <td><%= link_to 'Edit', edit_admin_product_path(product) %></td>
-      <td><%= link_to 'Destroy', admin_product_path(product), :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to I18n.t('admin.product.edit'), edit_admin_product_path(product) %></td>
+      <td><%= link_to I18n.t('admin.product.destroy'), admin_product_path(product), :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
 <% end %>
 </table>
 </div>
 <br />
 <div>
-  <%= will_paginate @products, :previous_label => '上一页', :next_label => '下一页' %><br/>
-  <%= link_to 'New Product', new_admin_product_path %>
+  <%= will_paginate @products, :previous_label => I18n.t('admin.product.pre'), :next_label => I18n.t('admin.product.next') %><br/>
+  <%= link_to I18n.t('admin.product.newproduct'), new_admin_product_path %>
 </div>
