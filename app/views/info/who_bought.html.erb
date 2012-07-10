@@ -24,7 +24,6 @@
       <%=truncate((order.products.map(&:title).join(',')).gsub(/<.*?/,''), :length => 15) -%>
     </td>
     <td><%= link_to 'Show', info_path(order) %></td>
-    <td> <%#= link_to "Edit", "#" %></td>
     </tr>
   <% end -%>
 </table>

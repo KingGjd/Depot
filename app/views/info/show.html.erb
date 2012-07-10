@@ -1,0 +1,17 @@
+<p>
+<b>E-mail:</b>
+  <%= mail_to @order.email %>
+</p>
+<p>
+  <b> Name:</b>
+  <%= @order.name %>
+</p>
+<p>
+  <b>Address:</b>
+  <%= @order.address %>
+</p>
+<p>
+  <b>Title:</b>
+  <%= @order.products.map(&:title).join(',') %>
+</p>
+<%= link_to "Back", who_bought_info_index_path  %>
