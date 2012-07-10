@@ -8,4 +8,20 @@ class InfoController < ApplicationController
       format.xml {render :layout => false }
     end
   end
+
+  def edit
+    @orders = Orders.find(params[:id])
+  end
+
+  def update
+    @orders = Orders.find(params[:id])
+
+    respond_to do |format|
+      if @orders.update_attributes(params[:orders])
+        format.html{}
+      else
+        format.html{}
+      end
+    end
+  end
 end

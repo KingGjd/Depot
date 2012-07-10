@@ -9,12 +9,21 @@ en:
       questions: 'Questions'
       news: 'News'
       contact: 'Contact'
+      changepassword: 'Changepassword'
+      logout: 'Logout'
+      orders: 'Orders'
+      products: 'Products'
+      users: 'Users'
+      login: 'Login'
+      registereduser: 'Registered User'
     cart:
       button:
         empty: "Empty cart"
         checkout: "Checkout"
       title: "Your Cart"
     title: "Pragmaticions Bookshelf"
+    hello:
+      howdy: "Howdy"
   main:
     button:
       add: "Add to Cart"
@@ -27,3 +36,10 @@ en:
     pay_type: "Pay with"
     pay_prompt: "Select a payment method"
     submit: "Place Order"
+  users:
+    button:
+      add: 'Add User'
+  store:
+    total: 'Total'
+    previous: 'Previous'
+    next: 'Next'

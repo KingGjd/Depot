@@ -1,15 +1,16 @@
+<div id = "product-list">
 <%- if @product.present? -%>
 <h3>People Who Bought <%= @product.title %></h3>
 <%- end -%>
-<table>
-  <tr>
+<table id = "product-list">
+  <tr >
     <td>E-mail</td>
     <td>Name</td>
     <td>Address</td>
     <td>Title</td>
   </tr>
   <% @orders.each do |order| -%>
-    <tr>
+    <tr class = "<%= cycle('list-line-odd', 'list-line-even') %>">
     <td>
       <%= mail_to order.email %>
     </td>
@@ -22,6 +23,8 @@
     <td>
       <%= order.products.map(&:title).join(',') -%>
     </td>
+    <td> <%#= link_to "Edit", "#" %></td>
     </tr>
   <% end -%>
 </table>
+</div>

@@ -7,12 +7,12 @@
     <div class="price-line" >
       <span class="price"><%= number_to_currency(product.price) %></span>
       <%= form_tag({:action => 'add_to_cart', :id => product}, {:class => "form-#{product.id}", :remote => true}) do %>
-         <%= submit_tag I18n.t('main.button.add'), :style => "cursor:pointer", :disable_with => "Ling..." %>
+         <%= submit_tag I18n.t('main.button.add'), :style => "cursor:pointer",:disable_with => "Ling..." %>
       <%- end -%>
     </div>
   </div>
 <% end %>
-  <%= will_paginate @products, :previous_label => '上一页', :next_label => '下一页' %><br/>
+<%= will_paginate @products, :previous_label => I18n.t('store.previous'), :next_label => I18n.t('store.next') %><br/>
 <script type="text/javascript" language="javascript" charset="utf-8">
 //<![CDATA[
 $(function() {

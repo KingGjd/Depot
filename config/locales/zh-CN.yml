@@ -5,12 +5,21 @@ zh-CN:
       questions: "帮助"
       news: "新闻动态"
       contact: "联系我们"
+      changepassword: "修改密码"
+      logout: "退出登入"
+      orders: "订单"
+      products: "产品"
+      users: "用户"
+      login: "登入"
+      registereduser: "注册用户"
     cart:
       button:
         empty: "清空购物车"
         checkout: "结账"
       title: "您的购物车"
     title: "原出版社"
+    hello:
+      howdy: "您好"
   main:
     button:
       add: "加入购物车"
@@ -23,6 +32,13 @@ zh-CN:
     pay_type: "付款方式"
     pay_prompt: "提示付款"
     submit: "提交订单"
+  users:
+    button:
+      add: "注册用户"
+  store:
+    total: "合计"
+    previous: "上一页"
+    next: "下一页"
   date:
     abbr_day_names:
     - 日
@@ -223,9 +239,21 @@ zh-CN:
       <<: *errors
     models:
       product: "产品"
+      user: "用户"
+      order: "订单"
     attributes:
       product:
         title: "标题"
         description: "内容"
         image_url: "图片"
         price: "价格"
+      user:
+        name: "姓名"
+        old_password: "旧密码"
+        password_confirmation: "确认密码"
+        admin: "管理员"
+        password: "密码"
+      order:
+        address: "地址"
+        name: "姓名"
+        pay_type: "支付方式"

@@ -14,7 +14,7 @@
         <%= select_tag 'locale', options_for_select(LANGUAGES, I18n.locale), :onchange => 'this.form.submit()' %>
         <%= javascript_tag "$('.locale input').hide()" %>
         <% if session[:user_id]%>
-           <%= current_user.name %>您好
+          <%= current_user.name %><%= I18n.t('layout.hello.howdy') %>
          <% else %>
            <%= "游客您好" %>
          <% end%>
@@ -34,20 +34,20 @@
       </div>
         <% if current_user.try(:admin?) %>
           <br />
-           <%= link_to "Orders", info_who_bought_path %><br/>
-           <%= link_to "Products", admin_products_path %><br/>
-           <%= link_to "Users", admin_users_path  %><br/>
+           <%= link_to I18n.t('layout.side.orders'), info_who_bought_path %><br/>
+           <%= link_to I18n.t('layout.side.products'), admin_products_path %><br/>
+           <%= link_to I18n.t('layout.side.users'), admin_users_path  %><br/>
 
            <br />
          <% else %>
             <%= link_to I18n.t('layout.side.home'), :controller => "store" -%><br/>
          <% end %>
         <% if current_user %>
-            <%= link_to "修改密码", change_password_users_path%><br/>
-            <%= link_to "Logout", admin_lonout_path %><br/>
+            <%= link_to I18n.t('layout.side.changepassword'), change_password_users_path%><br/>
+            <%= link_to I18n.t('layout.side.logout'), admin_lonout_path %><br/>
         <% else %>
-            <%= link_to "注册用户", new_user_path%><br/>
-            <%= link_to "Login", admin_login_path %><br/>
+            <%= link_to I18n.t('layout.side.registereduser'), new_user_path%><br/>
+            <%= link_to I18n.t('layout.side.login'), admin_login_path %><br/>
         <% end %>
       </div>
       <div id = "main" >

@@ -3,7 +3,7 @@
     <%= render :partial => "shared/error_message", :locals => {:object => @order} %>
 
     <fieldset>
-      <legend><%= I18n.t 'checkout.legend' -%></legend>
+      <legend><%= I18n.t ('checkout.legend') -%></legend>
       <div>
         <%= form.label :name, I18n.t('checkout.name') %>
         <%= form.text_field :name, :size => 40 %>
