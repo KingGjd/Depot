@@ -4,25 +4,26 @@
 <%- end -%>
 <table id = "product-list">
   <tr >
-    <td>E-mail</td>
-    <td>Name</td>
-    <td>Address</td>
-    <td>Title</td>
+    <td class = "ouder-Email">E-mail</td>
+    <td class = "ouder-Name">Name</td>
+    <td class = "ouder-Address">Address</td>
+    <td class = "ouder-Title">Title</td>
   </tr>
   <% @orders.each do |order| -%>
     <tr class = "<%= cycle('list-line-odd', 'list-line-even') %>">
-    <td>
+    <td class = "ouder-Email">
       <%= mail_to order.email %>
     </td>
-    <td>
+    <td class = "ouder-Name">
       <%= order.name %>
     </td>
-    <td>
-      <%= order.address %>
+    <td class = "ouder-Address">
+      <%=truncate( order.address.gsub(/<.*?>/,''), :length => 15) %>
     </td>
-    <td>
-      <%= order.products.map(&:title).join(',') -%>
+    <td class = "ouder-Title">
+      <%=truncate((order.products.map(&:title).join(',')).gsub(/<.*?/,''), :length => 15) -%>
     </td>
+    <td><%= link_to 'Show', info_path(order) %></td>
     <td> <%#= link_to "Edit", "#" %></td>
     </tr>
   <% end -%>

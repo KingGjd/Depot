@@ -8,11 +8,11 @@ class InfoController < ApplicationController
       format.xml {render :layout => false }
     end
   end
-
+  #TODT 修改
   def edit
     @orders = Orders.find(params[:id])
   end
-
+#TODO 修改
   def update
     @orders = Orders.find(params[:id])
 
@@ -22,6 +22,15 @@ class InfoController < ApplicationController
       else
         format.html{}
       end
+    end
+  end
+
+  def show
+    @order = Order.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json{ render :json => @order}
     end
   end
 end

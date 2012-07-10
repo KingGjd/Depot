@@ -3,9 +3,12 @@ Depot1::Application.routes.draw do
     resources :users
     resources :products
   end
-
-  get "info/who_bought"
-
+  
+  resources :info do
+    collection do
+      get :who_bought
+    end
+  end
   get "admin/login"
 
   post "admin/login"

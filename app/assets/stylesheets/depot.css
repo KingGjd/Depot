@@ -268,4 +268,16 @@ background: #efe;
   font-weight: bold;
   font-size: 12px;
 }
+.ouder-Email{
+  min-width: 200px;
+}
+.ouder-Name{
+  min-width: 100px;
+}
+.ouder-Address{
+  min-width: 200px;
+}
+.ouder-Title{
+  min-width: 140px;
+}
 
