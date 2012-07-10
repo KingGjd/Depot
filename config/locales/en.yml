@@ -43,3 +43,10 @@ en:
     total: 'Total'
     previous: 'Previous'
     next: 'Next'
+  info:
+    email: 'E-mail'
+    name: 'Name'
+    address: 'Address'
+    title: 'Title'
+    show: 'Show'
+    back: 'Back'

@@ -4,10 +4,10 @@
 <%- end -%>
 <table id = "product-list">
   <tr >
-    <td class = "ouder-Email">E-mail</td>
-    <td class = "ouder-Name">Name</td>
-    <td class = "ouder-Address">Address</td>
-    <td class = "ouder-Title">Title</td>
+    <td class = "ouder-Email"><%= I18n.t('info.email') %></td>
+    <td class = "ouder-Name"><%= I18n.t('info.name') %></td>
+    <td class = "ouder-Address"><%= I18n.t('info.address')%></td>
+    <td class = "ouder-Title"><%= I18n.t('info.title')%></td>
   </tr>
   <% @orders.each do |order| -%>
     <tr class = "<%= cycle('list-line-odd', 'list-line-even') %>">
@@ -23,7 +23,7 @@
     <td class = "ouder-Title">
       <%=truncate((order.products.map(&:title).join(',')).gsub(/<.*?/,''), :length => 15) -%>
     </td>
-    <td><%= link_to 'Show', info_path(order) %></td>
+    <td><%= link_to I18n.t('info.show'), info_path(order) %></td>
     </tr>
   <% end -%>
 </table>

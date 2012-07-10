@@ -1,17 +1,17 @@
 <p>
-<b>E-mail:</b>
+<b><%= I18n.t('info.email') %>:</b>
   <%= mail_to @order.email %>
 </p>
 <p>
-  <b> Name:</b>
+  <b> <%= I18n.t('info.name') %>:</b>
   <%= @order.name %>
 </p>
 <p>
-  <b>Address:</b>
+  <b><%= I18n.t('info.address')%>:</b>
   <%= @order.address %>
 </p>
 <p>
-  <b>Title:</b>
+  <b><%= I18n.t('info.title')%>:</b>
   <%= @order.products.map(&:title).join(',') %>
 </p>
-<%= link_to "Back", who_bought_info_index_path  %>
+<%= link_to I18n.t('info.back'), who_bought_info_index_path  %>
