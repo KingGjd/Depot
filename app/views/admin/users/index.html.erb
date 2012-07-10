@@ -1,24 +1,24 @@
-<h1>Listing users</h1>
+<h1><%= I18n.t('admin.users.listing_users') %></h1>
 <div id = "product-list">
 <table>
   <tr>
-    <th>Name</th>
-    <th>&nbsp;&nbsp;&nbsp;Admin</th>
+    <th><%= I18n.t('admin.users.name') %></th>
+    <th>&nbsp;&nbsp;&nbsp;<%= I18n.t('admin.users.admin') %></th>
   </tr>
 
 <% @users.each do |user| %>
   <tr class = "<%= cycle('list-line-odd' , 'list-line-even') %>">
     <td><%= user.name %></td>
     <td>&nbsp;&nbsp;&nbsp;<%= user.admin? %>  </td>
-    <td>&nbsp; &nbsp;&nbsp;<%= link_to 'Show', admin_user_path(user) %></td>
-    <td>&nbsp;<%= link_to 'Edit', edit_admin_user_path(user) %></td>
-    <td>&nbsp;<%= link_to 'Destroy', admin_user_path(user), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td>&nbsp; &nbsp;&nbsp;<%= link_to I18n.t('admin.users.show'), admin_user_path(user) %></td>
+    <td>&nbsp;<%= link_to I18n.t('admin.users.edit'), edit_admin_user_path(user) %></td>
+    <td>&nbsp;<%= link_to I18n.t('admin.users.destroy'), admin_user_path(user), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 
 <% end %>
 </table>
 </div>
-<%= will_paginate @users, :previous_label => '上一页', :next_label => '下一页' %>
+<%= will_paginate @users, :previous_label => I18n.t('admin.users.pre'), :next_label =>  I18n.t('admin.users.next')%>
 <br />
 
-<%= link_to 'New User', new_admin_user_path %>
+<%= link_to I18n.t('admin.users.new_user'), new_admin_user_path %>

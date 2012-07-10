@@ -37,6 +37,7 @@ en:
     pay_prompt: "Select a payment method"
     submit: "Place Order"
   users:
+    change_password: 'Change Password'
     button:
       add: 'Add User'
   store:
@@ -68,3 +69,17 @@ en:
       description: 'Description'
       image_url: 'Image Url'
       price: 'Price'
+    users:
+      saveuser: 'Save User'
+      enter_user_details: 'Enter User Details'
+      name: 'Name'
+      admin: 'Admin'
+      listing_users: 'Listing Users'
+      show: 'Show'
+      edit: 'Edit'
+      destroy: 'Destroy'
+      pre: 'previous'
+      next: 'Next'
+      new_user: 'New User'
+      back: 'Back'
+      editing_user: 'Editing User'

@@ -33,6 +33,7 @@ zh-CN:
     pay_prompt: "提示付款"
     submit: "提交订单"
   users:
+    change_password: "修改密码"
     button:
       add: "注册用户"
   store:
@@ -59,11 +60,25 @@ zh-CN:
       destroy: "删除"
       pre: "上一页"
       next: "下一页"
-      newproduct: "新建产品"
+      newproduct: "添加产品"
       title: "标题"
       description: "简介"
       image_url: "图片"
       price: "价格"
+    users:
+      saveuser: "更新用户"
+      enter_user_details: "输入用户详细信息"
+      name: "用户名"
+      admin: "管理员"
+      listing_users: "用户表单"
+      show: "查看"
+      edit: "修改"
+      destroy: "删除"
+      pre: "上一页"
+      next: "下一页"
+      new_user: "添加用户"
+      back: "返回"
+      editing_user: "修改用户"
   date:
     abbr_day_names:
     - 日
