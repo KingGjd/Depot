@@ -46,7 +46,7 @@ class Admin::UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        flash[:notice] = "User #{@user.name} was successfully created."
+        flash[:notice] = "#{@user.name} #{I18n.t('controllers.users.create')}"
         format.html { redirect_to(admin_users_path) }
         format.json { render :json => @user, :status => :created, :location => @user }
       else
@@ -62,7 +62,7 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        flash[:notice] = "user #{@user.name} was successfully updated."
+        flash[:notice] = "#{@user.name} #{I18n.t('controllers.users.update')}"
         format.html { redirect_to(:action => 'index') }
         format.json { head :no_content }
       else
