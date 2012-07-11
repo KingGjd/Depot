@@ -40,6 +40,7 @@ en:
     change_password: 'Change Password'
     button:
       add: 'Add User'
+    submit: 'Update'
   store:
     total: 'Total'
     previous: 'Previous'
@@ -69,6 +70,7 @@ en:
       description: 'Description'
       image_url: 'Image Url'
       price: 'Price'
+      destroy_confirm: "Are you sure?"
     users:
       saveuser: 'Save User'
       enter_user_details: 'Enter User Details'

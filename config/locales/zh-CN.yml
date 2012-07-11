@@ -36,6 +36,7 @@ zh-CN:
     change_password: "修改密码"
     button:
       add: "注册用户"
+    submit: "修改"
   store:
     total: "合计"
     previous: "上一页"
@@ -65,6 +66,7 @@ zh-CN:
       description: "简介"
       image_url: "图片"
       price: "价格"
+      destroy_confirm: "你确定删除吗？"
     users:
       saveuser: "更新用户"
       enter_user_details: "输入用户详细信息"

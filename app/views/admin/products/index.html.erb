@@ -13,7 +13,7 @@
        </td>
       <td></td>
       <td><%= link_to I18n.t('admin.product.edit'), edit_admin_product_path(product) %></td>
-      <td><%= link_to I18n.t('admin.product.destroy'), admin_product_path(product), :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to I18n.t('admin.product.destroy'), admin_product_path(product), :confirm => t('admin.product.destroy_confirm'), :method => :delete %></td>
     </tr>
 <% end %>
 </table>
