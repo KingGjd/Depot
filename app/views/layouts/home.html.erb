@@ -37,7 +37,9 @@
         <% if current_user.try(:admin?) %>
           <br />
            <%= link_to I18n.t('layout.side.orders'), who_bought_info_index_path %><br/>
+           <p></p>
            <%= link_to I18n.t('layout.side.products'), admin_products_path %><br/>
+           <p></p>
            <%= link_to I18n.t('layout.side.users'), admin_users_path  %><br/>
 
            <br />
