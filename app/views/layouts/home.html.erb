@@ -42,7 +42,7 @@
 
            <br />
          <% else %>
-            <%= link_to I18n.t('layout.side.home'), :controller => "store" -%><br/>
+            <%= link_to I18n.t('layout.side.home'), root_path -%><br/>
          <% end %>
         <% if current_user %>
             <%= link_to I18n.t('layout.side.changepassword'), change_password_users_path%><br/>
