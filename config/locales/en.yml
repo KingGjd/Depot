@@ -89,3 +89,12 @@ en:
       price: 'should be at least 0.01'
     users:
       password: 'Missing password'
+  controllers:
+    store:
+      add_to_cart_error: 'Attempt to access invalid product'
+      add_to_cart_index: 'Invalid product'
+      save_order_index: 'Thank you for your order'
+      checkout_index: 'Your cart is empty'
+  admin:
+    login: 'Invalid user/password combination'
+    logout: 'Loggen out'

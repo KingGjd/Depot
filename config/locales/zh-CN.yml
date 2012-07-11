@@ -85,6 +85,15 @@ zh-CN:
       price: "输入的价格不能少于0.01"
     users:
       password: "密码不能为空"
+  controllers:
+    store:
+      add_to_cart_error: "不能访问无效的产品"
+      add_to_cart_index: "无效的产品"
+      save_order_index: "谢谢您的采购"
+      checkout_index: "您的购物车是空的"
+    admin:
+      login: "您输入的用户名或密码错误"
+      logout: "退出登入"
   date:
     abbr_day_names:
     - 日

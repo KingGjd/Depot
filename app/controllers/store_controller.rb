@@ -17,8 +17,8 @@ class StoreController < ApplicationController
       format.html {redirect_to_index}
     end
   rescue ActiveRecord::RecordNotFound
-    logger.error("Attempt to access invalid product #{params[:id]}")
-    redirect_to_index("Invalid product")
+    logger.error(" #{I18n.t('controllers.store.add_to_cart_error')} #{params[:id]}")
+    redirect_to_index(I18n.t('contorllers.store.add_to_cart_index'))
   end
 
   def reduce_from_cart
@@ -31,8 +31,8 @@ class StoreController < ApplicationController
       format.html {redirect_to_index}
     end
   rescue ActiveRecord::RecordNotFound
-    logger.error("Attempt to access invalid product #{params[:id]}")
-    redirect_to_index("Invalid product")
+    logger.error("#{I18n.t('controllers.store.add_to_cart_error')}#{params[:id]}")
+    redirect_to_index(I18n.t('controllers.store.add_to_cart_index'))
   end
 
   def save_order
@@ -42,7 +42,7 @@ class StoreController < ApplicationController
 
     if @order.save
       session[:cart] = nil
-      redirect_to_index("Thank you for your order")
+      redirect_to_index(I18n.t('controllers.store.save_order_index'))
     else
       render :action => 'checkout'
     end
@@ -57,7 +57,7 @@ class StoreController < ApplicationController
     @cart = find_cart
 
     if @cart.items.empty?
-      redirect_to_index("Your cart is empty")
+      redirect_to_index(I18n.t('controllers.chechout_index'))
     else
       @order = Order.new
     end

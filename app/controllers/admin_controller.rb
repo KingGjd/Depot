@@ -13,14 +13,14 @@ class AdminController < ApplicationController
            redirect_to(uri ||{:controller => "store"})
         end
       else
-          flash.now[:notice] = "Invalid user/password combination"
+          flash.now[:notice] =I18n.t('controllers.admin.login')
       end
     end
   end
 
   def lonout
     session[:user_id] =nil
-    flash[:notice] = "Logged out"
+    flash[:notice] = I18n.t('controllers.admin.logout')
     redirect_to(:action  => "login")
   end
 
