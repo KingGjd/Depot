@@ -53,7 +53,7 @@ en:
     back: 'Back'
   admin:
     login:
-      pleaselogin: 'Please Log In'
+      please_login: 'Please Log In'
       name: 'Name'
       password: 'Password'
       submit: 'Login'

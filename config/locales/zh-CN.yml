@@ -49,7 +49,7 @@ zh-CN:
     back: "返回"
   admin:
     login:
-      pleaselogin: "请登入"
+      please_login: "请登入"
       name: "用户名"
       password: "密码"
       submit: "登入"
