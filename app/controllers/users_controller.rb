@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.new(:name => name, :password =>password, :password_confirmation => confirm )
     respond_to do |format|
       if @user.save
-        flash[:notice] = "User #{@user.name} was successfully created."
+        flash[:notice] = "#{@user.name} #{I18n.t('controllers.users.create')}"
         format.html { redirect_to admin_login_path }
         format.json { render :json => @user, :status => :created, :location => @user }
       else
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
     if User.authenticate(@user.name, old_password)
       if @user.update_attributes(:password => new_password,
                                  :password_confirmation => password_confirmation)
-        flash[:notice] = "User #{@user.name}'s password was changed successfully."
+        flash[:notice] = "#{@user.name} #{I18n.t('controllers.users.change')}"
         redirect_to :controller => 'store'
       else
         render :change_password

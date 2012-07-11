@@ -95,6 +95,9 @@ en:
       add_to_cart_index: 'Invalid product'
       save_order_index: 'Thank you for your order'
       checkout_index: 'Your cart is empty'
-  admin:
-    login: 'Invalid user/password combination'
-    logout: 'Loggen out'
+    admin:
+      login: 'Invalid user/password combination'
+      logout: 'Loggen out'
+    users:
+      create: 'User was successfully created.'
+      change: "User's passwird was changed successfully."

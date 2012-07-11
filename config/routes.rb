@@ -23,6 +23,7 @@ Depot1::Application.routes.draw do
       get :add_user
       get :change_password
       put :save_change_password
+      get :save_change_password
     end
   end
   resources :store do
@@ -88,7 +89,7 @@ Depot1::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'store#index'
 
   # See how all your routes lay out with "rake routes"
 
