@@ -101,3 +101,9 @@ en:
     users:
       create: 'User was successfully created.'
       change: "User's passwird was changed successfully."
+      update: 'User was successfully updated.'
+    admin:
+      product:
+        create: 'Product was successfully created.'
+        update: 'Product was successfully updated.'
+
