@@ -1,20 +1,20 @@
 <div class = "depot-form">
   <%= form_tag do %>
     <fieldset>
-      <legend><%= I18n.t('admin.login.please_login') %> </legend>
+      <legend><%= t('admin.login.please_login') %> </legend>
 
       <div>
-        <label for = "name"><%= I18n.t('admin.login.name') %> :</label>
+        <label for = "name"><%= t('admin.login.name') %> :</label>
         <%= text_field_tag :name, params[:name]%>
       </div>
 
       <div>
-        <label for ="password"><%= I18n.t('admin.login.password') %>:</label>
+        <label for ="password"><%= t('admin.login.password') %>:</label>
         <%= password_field_tag :password , params[:password] %>
       </div>
 
       <div>
-        <%= submit_tag I18n.t('admin.login.submit') %>
+        <%= submit_tag t('admin.login.submit') %>
       </div>
     </fieldset>
   <% end %>

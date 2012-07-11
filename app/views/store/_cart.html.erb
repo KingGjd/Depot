@@ -1,18 +1,18 @@
 <% unless cart.items.empty? %>
-  <div class = "cart-title"> <%= I18n.t 'layout.cart.title' -%></div>
+  <div class = "cart-title"> <%= t 'layout.cart.title' -%></div>
 <table>
 
   <%= render( :partial => "cart_item" , :collection => cart.items) %>
 
   <tr class = "total-line" >
-    <td colspan = "2"><%=I18n.t('store.total') %></td>
+    <td colspan = "2"><%= t('store.total') %></td>
     <td class = "total-cell" ><%= number_to_currency(cart.total_price)%> </td>
   </tr>
 </table>
   <% if current_user %>
-    <%= button_to I18n.t('layout.cart.button.checkout'), {:action => 'checkout'}, {:style => "cursor:pointer"} %>
+    <%= button_to t('layout.cart.button.checkout'), {:action => 'checkout'}, {:style => "cursor:pointer"} %>
   <% else %>
-    <%= button_to I18n.t('layout.cart.button.checkout'), admin_login_path, :style => "cursor:pointer" %>
+    <%= button_to t('layout.cart.button.checkout'), admin_login_path, :style => "cursor:pointer" %>
   <% end%>
-  <%= button_to I18n.t('layout.cart.button.empty'), {:action => :empty_cart}, {:style => "cursor:pointer"}%>
+  <%= button_to t('layout.cart.button.empty'), {:action => :empty_cart}, {:style => "cursor:pointer"}%>
 <% end %>
