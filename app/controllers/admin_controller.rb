@@ -8,9 +8,9 @@ class AdminController < ApplicationController
         uri = session[:original_uri]
         session[:original_uri] = nil
         if current_user.admin?
-           redirect_to(uri ||admin_products_path)
+           redirect_to(uri || admin_products_path)
         else
-           redirect_to(uri ||{:controller => "store"})
+           redirect_to(uri || root_path)
         end
       else
           flash.now[:notice] =I18n.t('controllers.admin.login')
