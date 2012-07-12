@@ -67,7 +67,8 @@ zh-CN:
       image_url: "图片"
       price: "价格"
       destroy_confirm: "你确定删除吗？"
-      new_title: "添加商品"
+      new_title: "添加产品"
+      edit_title: "修改产品"
     users:
       saveuser: "更新用户"
       enter_user_details: "输入用户详细信息"
