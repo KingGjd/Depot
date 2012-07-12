@@ -71,6 +71,7 @@ en:
       image_url: 'Image Url'
       price: 'Price'
       destroy_confirm: "Are you sure?"
+      new_title: 'New product'
     users:
       saveuser: 'Save User'
       enter_user_details: 'Enter User Details'
@@ -100,14 +101,15 @@ en:
     admin:
       login: 'Invalid user/password combination'
       logout: 'Loggen out'
+      product:
+        create: 'Product was successfully created.'
+        update: 'Product was successfully updated.'
+
     users:
       create: 'User was successfully created.'
       change: "User's passwird was changed successfully."
       update: 'User was successfully updated.'
-    admin:
-      product:
-        create: 'Product was successfully created.'
-        update: 'Product was successfully updated.'
   error:
-    aa: 'error'
-    message: 'prohibited this product from being saved'
+    error: 'error'
+    errors: 'errors'
+    message: 'prohibited this%{model} from being saved'

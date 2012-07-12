@@ -67,6 +67,7 @@ zh-CN:
       image_url: "图片"
       price: "价格"
       destroy_confirm: "你确定删除吗？"
+      new_title: "添加商品"
     users:
       saveuser: "更新用户"
       enter_user_details: "输入用户详细信息"
@@ -96,18 +97,18 @@ zh-CN:
     admin:
       login: "您输入的用户名或密码错误"
       logout: "退出登入"
+      product:
+        create: "添加产品成功"
+        update: "修改产品成功"
+
     users:
       create: "用户创建成功"
       change: "用户修改密码成功"
       update: "用户修改成功"
-    admin:
-      product:
-        create: "添加产品成功"
-        update: "修改产品成功"
   error:
-    aa: "错误"
-    message: "添加产品失败"
-    aas: "错误"
+    error: "错误"
+    errors: "错误"
+    message: "添加 %{model}失败"
   date:
     abbr_day_names:
     - 日

@@ -1,6 +1,9 @@
 <% if object.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(object.errors.count, I18n.t('error.aa')) %> <%= t('error.message')%>:</h2>
+    <h2>
+    <%= pluralize(object.errors.count, I18n.t('error.error'),I18n.t('error.errors')) %>
+    <%=t 'error.message', :model => object.class.model_name.human -%>: 
+    </h2>
 
     <ul>
     <% object.errors.full_messages.each do |msg| %>
