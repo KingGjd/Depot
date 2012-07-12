@@ -12,7 +12,7 @@
   <% if current_user %>
     <%= button_to t('layout.cart.button.checkout'), {:action => 'checkout'}, {:style => "cursor:pointer"} %>
   <% else %>
-    <%= button_to t('layout.cart.button.checkout'), admin_login_path, :style => "cursor:pointer" %>
+    <%= button_to t('layout.cart.button.checkout'), admin_login_path, {:method => "get", :style => "cursor:pointer"} %>
   <% end%>
   <%= button_to t('layout.cart.button.empty'), {:action => :empty_cart}, {:style => "cursor:pointer"}%>
 <% end %>
