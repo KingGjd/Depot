@@ -108,7 +108,7 @@ en:
 
     users:
       create: 'User was successfully created.'
-      change: "User's passwird was changed successfully."
+      change: "User's password was changed successfully."
       update: 'User was successfully updated.'
   error:
     error: 'error'

@@ -11,7 +11,7 @@
       <%= form_tag "", :method => "GET", :class => 'locale' do %>
         <%#=  Product.human_attribute_name(:title) -%>
         <div class = "welcome">
-          <%- if current_page?(root_path) || current_page?(admin_products_path) %>
+          <%- if current_page?(root_path) || current_page?(admin_products_path) || current_page?(admin_login_path) %>
             <%= select_tag 'locale', options_for_select(LANGUAGES, I18n.locale), :onchange => 'this.form.submit()' %>
           <% end %>
         <%= javascript_tag "$('.locale input').hide()" %>
