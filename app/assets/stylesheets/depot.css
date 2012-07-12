@@ -191,10 +191,12 @@ h1 {
 
 .item-price, .total-line{
   text-align: right;
+
 }
+
 .total-line .total-cell{
   font-weight: bold;
-  border-top: 1px solid #595
+  border-top: 1px solid #595;
 }
 /* Styles for the cart in the sidebar */
 
@@ -207,6 +209,10 @@ h1 {
   border-top: 1px dotted #595;
   border-bottom: 1px dotted #595;
   margin-bottom: 10px;
+}
+
+#cart table .total-line td {
+  border-top: 1px solid #595;
 }
 /*Styles for order form */
 .depot-form fieldset{

@@ -6,7 +6,8 @@
 
   <tr class = "total-line" >
     <td colspan = "2"><%= t('store.total') %></td>
-    <td class = "total-cell" ><%= number_to_currency(cart.total_price)%> </td>
+    <td><%= number_to_currency(cart.total_price)%> </td>
+    <td colspan="2">&nbsp;</td>
   </tr>
 </table>
   <% if current_user %>
