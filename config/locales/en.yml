@@ -87,7 +87,7 @@ en:
       editing_user: 'Editing User'
   models:
     product:
-      image: 'must be a URL for GIF,JPG or PNG image.'
+      image: 'must be a URL for GIF,JPG or PNG image'
       price: 'should be at least 0.01'
     users:
       password: 'Missing password'
@@ -108,4 +108,6 @@ en:
       product:
         create: 'Product was successfully created.'
         update: 'Product was successfully updated.'
-
+  error:
+    aa: 'error'
+    message: 'prohibited this product from being saved'

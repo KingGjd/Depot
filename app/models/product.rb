@@ -7,7 +7,7 @@ class Product < ActiveRecord::Base
   validates_numericality_of :price
   validate :price_must_be_at_least_a_cent
   validates_uniqueness_of :title
-  validates_format_of :image_url, :with => %r{\.(gif|jpg|png)$}i, :message => I18n.t('models.product.image')
+  validates_format_of :image_url, :with => %r{\.(gif|jpg|png)$}i, :message => lambda { I18n.t('models.product.image') }
 
   attr_accessor :file
   #has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }

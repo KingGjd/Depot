@@ -104,6 +104,10 @@ zh-CN:
       product:
         create: "添加产品成功"
         update: "修改产品成功"
+  error:
+    aa: "错误"
+    message: "添加产品失败"
+    aas: "错误"
   date:
     abbr_day_names:
     - 日
