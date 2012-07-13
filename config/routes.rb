@@ -3,7 +3,9 @@ Depot1::Application.routes.draw do
     resources :users
     resources :products
   end
-  
+
+  resources :sync
+
   resources :info do
     collection do
       get :who_bought

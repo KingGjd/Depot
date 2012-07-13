@@ -57,7 +57,7 @@ class UsersController < ApplicationController
         render :change_password
       end
     else
-      @user.errors.add(:old_password, "旧密码错误")
+      @user.errors.add(:old_password, "错误")
       render :change_password
     end
   end

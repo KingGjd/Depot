@@ -1,0 +1,11 @@
+development:
+      key: "995564128"
+      secret: "your secret"
+      url: "http://king.s23.agideo.com"
+      callback: "http://192.168.1.104:3000/synce/sina.callback"
+production:
+      key: "995564128"
+      secret: "your secret"
+      url: "http://king.s23.agideo.com"
+      callback: "http://192.168.1.104:3000/synce/sina.callback"
+
