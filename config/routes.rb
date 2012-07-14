@@ -42,8 +42,8 @@ Depot1::Application.routes.draw do
     end
   end
   
-  match "syncs/:type/new" => "syncs#new", :as => :sync_new
-  match "syncs/:type/callback" => "syncs#callback", :as => :sync_callback
+  match "syncs/:type/new" => "syncs#new", :as => :syncs_new
+  match "syncs/:type/callback" => "syncs#callback", :as => :syncs_callback
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
