@@ -1,4 +1,6 @@
-class SyncController < ApplicationController
+class SyncsController < ApplicationController
+
+  before_filter :login_requireud
 
   def new
     client = OauthChian::Sina.new
