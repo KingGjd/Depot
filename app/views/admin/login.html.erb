@@ -16,8 +16,10 @@
       <div>
         <%= submit_tag t('admin.login.submit') %>
       </div>
-      <div>
-        <%= link_to image_tag("/assets/sina_login.png"), "/syncs/gjd/new" %>
+      <div class="sina">
+        <%= link_to "/syncs/gjd/new" do %>
+          <%= image_tag("/assets/sina_login.png", :align => "absmiddle") -%>使用新浪微博登入
+        <%- end -%>
       </div>
 
     </fieldset>

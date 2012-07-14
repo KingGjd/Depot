@@ -286,3 +286,11 @@ background: #efe;
 .ouder-Title{
   min-width: 140px;
 }
+
+.sina {
+  line-height: 38px;
+}
+.sina a {
+  color: #333 !important;
+  text-decoration: none;
+}
