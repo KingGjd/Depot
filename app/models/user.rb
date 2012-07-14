@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  LEVEL_LIMITED = "limited"
+
   attr_accessible :hashed_password, :name, :salt, :password_confirmation, :password, :admin
 
   validates_presence_of :name
@@ -7,6 +9,10 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
 
   validate :password_non_blank
+
+  def limited?
+    self.level == LEVEL_LIMITED
+  end
 
   def password
     @password

@@ -1,6 +1,6 @@
 class SyncsController < ApplicationController
 
-  before_filter :authorize
+  skip_before_filter :authorize
 
   def new
     client = OauthChina::Sina.new
@@ -17,14 +17,16 @@ class SyncsController < ApplicationController
 
     if results[:access_token] && results[:access_token_secret]
       flash[:notice] = "授权成功"
+      session[:user_id] = 39
     else
       flash[:notice] = "授权失败"
     end
-    redirect_to root_path
+    redirect_to root_url
   end
 
   private
-  def build_oauth_token_key(name, oauth_token)
-    [name, oauth_token].join("_")
-  end
+
+    def build_oauth_token_key(name, oauth_token)
+      [ name, oauth_token ].join("_")
+    end
 end

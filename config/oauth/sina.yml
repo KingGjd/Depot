@@ -2,9 +2,4 @@ development:
   key: "995564128"
   secret: "90cab9ec57fe2ebb04c3cafc7b47dccc"
   url: "http://king.s23.agideo.com"
-  callback: "http://192.168.1.104:3000/store"
-production:
-  key: "995564128"
-  secret: "90cab9ec57fe2ebb04c3cafc7b47dccc"
-  url: "http://king.s23.agideo.com"
-  callback: "http://192.168.1.104:3000/store"
+  callback: "http://192.168.1.104:3000/syncs/sina/callback"

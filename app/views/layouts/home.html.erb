@@ -14,12 +14,14 @@
           <%- if current_page?(root_path) || current_page?(admin_products_path) || current_page?(admin_login_path) %>
             <%= select_tag 'locale', options_for_select(LANGUAGES, I18n.locale), :onchange => 'this.form.submit()' %>
           <% end %>
-        <%= javascript_tag "$('.locale input').hide()" %>
-        <% if session[:user_id]%>
-          <%= current_user.name %><%= I18n.t('layout.hello.howdy') %>
-         <% else %>
-           <%= "游客您好" %>
-         <% end%>
+
+          <%= javascript_tag "$('.locale input').hide()" %>
+
+          <%- if current_user -%>
+            <%= current_user.name %><%= I18n.t('layout.hello.howdy') %>
+           <% else %>
+             <%= "游客您好" %>
+           <% end %>
        </div>
       <% end %>
       <%= image_tag("/assets/login.png") %>
@@ -33,25 +35,25 @@
             <%= render :partial => "cart", :object => @cart %>
           <% end %>
         <% end %>
-      </div>
+        </div>
+
         <% if current_user.try(:admin?) %>
           <br />
-           <%= link_to I18n.t('layout.side.orders'), who_bought_info_index_path %><br/>
-           <p></p>
-           <%= link_to I18n.t('layout.side.products'), admin_products_path %><br/>
-           <p></p>
-           <%= link_to I18n.t('layout.side.users'), admin_users_path  %><br/>
+          <%= link_to I18n.t('layout.side.orders'), who_bought_info_index_path %><br/>
+          <%= link_to I18n.t('layout.side.products'), admin_products_path %><br/>
+          <%= link_to I18n.t('layout.side.users'), admin_users_path  %><br/>
 
-           <br />
-         <% else %>
-            <%= link_to I18n.t('layout.side.home'), root_path -%><br/>
-         <% end %>
-        <% if current_user %>
-            <%= link_to I18n.t('layout.side.changepassword'), change_password_users_path%><br/>
-            <%= link_to I18n.t('layout.side.logout'), admin_lonout_path %><br/>
+          <br />
         <% else %>
-            <%= link_to I18n.t('layout.side.registereduser'), new_user_path%><br/>
-            <%= link_to I18n.t('layout.side.login'), admin_login_path %><br/>
+           <%= link_to I18n.t('layout.side.home'), root_path -%><br/>
+        <% end %>
+
+        <% if current_user %>
+          <%= link_to(I18n.t('layout.side.changepassword'), change_password_users_path) unless current_user.limited? %><br/>
+          <%= link_to I18n.t('layout.side.logout'), admin_lonout_path %><br/>
+        <% else %>
+          <%= link_to I18n.t('layout.side.registereduser'), new_user_path%><br/>
+          <%= link_to I18n.t('layout.side.login'), admin_login_path %><br/>
         <% end %>
       </div>
       <div id = "main" >
