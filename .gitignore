@@ -19,3 +19,4 @@ d.diff
 *.swo
 *.swn
 app/assets/images/uploads/
+config/oauth/sina.yml
