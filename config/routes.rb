@@ -4,7 +4,6 @@ Depot1::Application.routes.draw do
     resources :products
   end
 
-  resources :sync
 
   resources :info do
     collection do
