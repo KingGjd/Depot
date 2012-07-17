@@ -17,8 +17,14 @@
         <%= submit_tag t('admin.login.submit') %>
       </div>
       <div class="sina">
-        <%= link_to "/syncs/gjd/new" do %>
+        <%= link_to "/syncs/gjd/sina_new" do %>
           <%= image_tag("/assets/sina_login.png", :align => "absmiddle") -%>使用新浪微博登入
+        <%- end -%>
+      </div>
+
+      <div class="sina">
+        <%= link_to "/syncs/depot/douban_new" do %>
+          <%= image_tag("/assets/sina_login.png", :align => "absmiddle") -%>豆瓣登入
         <%- end -%>
       </div>
 
