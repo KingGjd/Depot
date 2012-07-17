@@ -20,3 +20,7 @@ d.diff
 *.swn
 app/assets/images/uploads/
 config/oauth/sina.yml
+config/oauth/douban.yml
+config/oauth/qq.yml
+config/oauth/renren.yml
+

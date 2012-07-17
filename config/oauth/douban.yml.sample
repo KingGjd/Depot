@@ -1,0 +1,5 @@
+development:
+  key:
+  secret:
+  url: "http://king.s23.agideo.com"
+  callback:
