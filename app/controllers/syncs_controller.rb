@@ -38,7 +38,7 @@ class SyncsController < ApplicationController
     else
       flash[:notice] = "授权失败"
     end
-    redirect_to root_url
+    redirect_to "/access_sina_test"
   end
 
   private
